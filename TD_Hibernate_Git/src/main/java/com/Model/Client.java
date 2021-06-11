@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -28,9 +29,17 @@ public class Client {
 	@Column(name = "prenom", nullable = true, unique = false, length = 50)
 	private String prenom;
 	
+	@OneToOne
+	@JoinColumn(name="compte_id")
+	private Compte compte;
+	
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="client_id")
 	private Set<Produit> produits;
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="client_id")
+	private Set<Commande> commande;
 
 	public Set<Produit> getProduits() {
 		return produits;
@@ -74,6 +83,12 @@ public class Client {
 		this.prenom = prenom;
 	}
 	
-	
+	public Compte getCompte() {
+		return compte;
+	}
+
+	public void setCompte(Compte compte) {
+		this.compte = compte;
+	}
 
 }

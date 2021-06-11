@@ -9,9 +9,9 @@
         <property name="hibernate.connection.url">jdbc:mysql://mysql-simarone.alwaysdata.net/simarone_td_hibernate_git</property>
         <property name="hibernate.connection.username">simarone</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        
         <mapping class="com.Model.Produit" />
  		<mapping class="com.Model.Client" />
-        
+ 		<mapping class="com.Model.Commande" />
+ 		<mapping class="com.Model.Compte" />
     </session-factory>
 </hibernate-configuration>

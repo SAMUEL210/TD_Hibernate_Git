@@ -7,6 +7,7 @@ import java.util.Set;
 import org.hibernate.Session;
 
 import com.Model.Client;
+import com.Model.Compte;
 import com.Model.Produit;
 import com.Service.ClientService;
 import com.Service.ProduitService;
@@ -32,7 +33,7 @@ public class Principale
 		
 		//cs.create(c1, session);
 		//c1.setProduits(listeP);
-		//cs.delete(sessio, 3)
+		//cs.delete(session, 3)
 		//cs.update(session, 2)
 		
 		Client c2 = cs.findById(session, 3);
@@ -52,6 +53,14 @@ public class Principale
 		for(Produit p: listeprod) {
 			System.out.println("Marque : " + p.getMarque() + ", Reference : " + p.getReference() + ", prix : " + p.getPrix());
 		}
+		
+		Compte cpt1 = new Compte("test@test.com", "test");
+		Client c3 = new Client("Sophie", "Marie");
+		
+		session.saveOrUpdate(cpt1);
+		c3.setCompte(cpt1);
+		session.saveOrUpdate(c3);
+		
 		
 		session.getTransaction().commit();
 		HibernateUtil.shutdown();
