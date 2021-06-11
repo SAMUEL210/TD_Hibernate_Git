@@ -5,9 +5,9 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.password">TPJava&OT</property>
-        <property name="hibernate.connection.url">jdbc:mysql://mysql-tpjavaot.alwaysdata.net/tpjavaot_td_hibernate_git</property>
-        <property name="hibernate.connection.username">tpjavaot</property>
+        <property name="hibernate.connection.password">langagecwane2016.</property>
+        <property name="hibernate.connection.url">jdbc:mysql://mysql-simarone.alwaysdata.net/simarone_td_hibernate_git</property>
+        <property name="hibernate.connection.username">simarone</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         
         <mapping class="com.Model.Produit" />
